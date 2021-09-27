@@ -3,34 +3,49 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Safer Message</title>
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="index.js"></script>
-
+    <meta name="viewport" content="width=device-width">
+    <title>Safer Woman Chile</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <img src="" alt="">
-    <div id="Pagina1">
-        <h1>Safer Message</h1>
-        <h2>Safer Message es un espacio seguro donde podrás cifrar tus mensajes</h2>
-        <label for="inumber">Ingresa un Número de Desplazamiento</label>
-        <input id="inumber" type="number" name="number">
-        <input type="submit" name="Aceptar">
-        <br>
-        <h3>Escribe tu Mensaje</h3>
-        <p><input id="itext" type="text" name="text"></p>
-        <h3>Mensaje Cifrado/Descifrado</h3>
-        <p><input id="itext2" type="text" name="text2"></p>
-        <p><button id="cifrar" type="button">Cifrar</button></p>
-        <button id="decsifrar" type="button">Descifrar</button>
+
+    <div class="container">
+
+        <header class="title-container">
+            <h1>Safer Woman Chile es un sistema seguro y 100% confidencial</h1>
+            <p>Las mujeres, sólo por el hecho de ser mujeres, viven diversas formas de violencia de parte de sus parejas o de su entorno que van desde el control hasta la agresión física. Esto se justifica porque en muchas culturas, incluida la chilena,
+                todavía se cree que los hombres tienen derecho a controlar la libertad y la vida de las mujeres. <br>
+                <br> Si eres testigo o sientes que estás en una situación de violencia intrafamiliar, utiliza este canal de mensajería. <br>
+                <br> ¡Cifra tus mensajes con Safer Woman Chile! <br>
+
+            </p>
+        </header>
 
 
-    </div><br><br>
+        <section id="form">
+            <h2>Ingresa el Texto a Cifrar</h2>
+            <p><input type="text" id="message1"></p>
+
+            <h3>Número Clave</h3>
+            <p><input type="number" id="offset"></p>
+
+            <button type="button" id="encode"><b>Cifrar</b></button>
+            <button type="button" id="decode"><b>Descifrar</b></button>
+
+            <h4>Mensaje Encriptado</h4>
+            <textarea name="textarea" id="encrypted message" placeholder="Tu mensaje encriptado aquí"></textarea>
+
+            <button type="button" class="eraseBtn" id="eraseButton">Limpiar</button>
+        </section>
 
 
+        <footer class="ending-container">
+            <p>Cipher | Safer Woman Chile 2021</p>
+        </footer>
+    </div>
 
+    <script src="index.js" type="module"></script>
 </body>
 
 </html>
