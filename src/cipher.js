@@ -1,13 +1,12 @@
 const cipher = {
     encode: (displacementNumber, firstText) => {
-        console.log(displacementNumber);
-        console.log(firstText);
-
-
+        if (displacementNumber === null || displacementNumber === 0) {
+            throw new TypeError();
+        }
         let encodedText = "";
         for (let i = 0; i < firstText.length; i++) {
 
-            //Declarar variable número ascii para dar el charCodeAt a la constante firstText
+
             let asciiNumber = firstText.charCodeAt(i);
 
             if (asciiNumber >= 65 && asciiNumber <= 90) {
@@ -18,13 +17,14 @@ const cipher = {
                 encodedText += String.fromCharCode(lowerLetters);
             }
         }
-        return encodedText
+        return encodedText;
     },
 
 
     decode: (displacementNumber, firstText) => {
-
-
+        if (displacementNumber === null || displacementNumber === 0) {
+            throw new TypeError();
+        }
         let decodedText = "";
         for (let i = 0; i < firstText.length; i++) {
             let asciiNumber = firstText.charCodeAt(i);
@@ -39,7 +39,7 @@ const cipher = {
             }
 
         }
-        return decodedText
+        return decodedText;
 
     }
 };

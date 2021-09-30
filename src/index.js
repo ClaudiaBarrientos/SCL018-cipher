@@ -1,41 +1,25 @@
-//Declarar variable para llamar al id mensaje a cifrar 
-const wordsToEncode = document.getElementById("message1");
-console.log(wordsToEncode);
+import cipher from './cipher.js';
 
-//Declarar variable para llamar al textarea de salida
-const finalMessage = document.getElementById("encryptedMessage");
-
-//Declarar evento listener del botón encode
+const wordsToEncode = () => {
+    let displacementNumber = document.getElementById("offset").value;
+    let firstText = document.getElementById("message1").value;
+    document.getElementById("encryptedMessage").value = cipher.encode(displacementNumber, firstText);
+}
 const encode = document.getElementById("encode");
-encode.addEventListener("click", () => {
-    const displacementNumber = document.getElementById("offset").value;
-    const firstText = document.getElementById("message1").value;
+encode.addEventListener("click", wordsToEncode);
 
-    finalMessage.value = cipher.encode(displacementNumber, firstText);
-    console.log(encode);
-});
-
-//Declarar variable para llamar al id mensaje a descifrar
-const wordsToDecode = document.getElementById("message1");
-console.log(wordsToDecode);
-
-//Declarar variable para llamar al textarea de salida
-const finalMessage = document.getElementById("encryptedMessage");
-
-//Declarar evento listener del botón decode
+const wordsToDecode = () => {
+    let displacementNumber = document.getElementById("offset").value;
+    let firstText = document.getElementById("message1").value;
+    document.getElementById("encryptedMessage").value = cipher.decode(displacementNumber, firstText);
+}
 const decode = document.getElementById("decode");
-decode.addEventListener("click", () => {
-    const displacementNumber = document.getElementById("offset").value;
-    const firstText = document.getElementById("message1").value;
-    finalMessage.value = cipher.decode(displacementNumber, firstText);
-});
+decode.addEventListener("click", wordsToDecode);
 
-//Declarar Función botón borrar
-const eraseBtn = document.getElementById("eraseButton");
-eraseBtn.addEventListener("click", () => {
+const clearForm = () => {
     document.getElementById("offset").value = "";
     document.getElementById("message1").value = "";
-    document.getElementById("encryptedMessage").innerHTML = "";
-});
-
-import cipher from './cipher.js';
+    document.getElementById("encryptedMessage").value = "";
+}
+const eraseBtn = document.getElementById("eraseButton");
+eraseBtn.addEventListener("click", clearForm);
